@@ -180,6 +180,56 @@ flexibility(document.documentElement);
 				.lg-thumb-item.active {
 					opacity: 1;
 				}
+	/* Popup Button Styles */
+#popup-button {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  background-color: #ff9800;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  z-index: 1000;
+}
+
+/* Popup Message Container Styles */
+#popup-container {
+  display: none;
+  position: fixed;
+  bottom: 60px; /* Adjust based on the height of your popup button */
+  left: 20px;
+  width: 80%;
+  max-width: 400px; /* Set the desired width */
+  height: auto;
+  padding: 20px;
+  background-color: white;
+  border: 2px solid #ccc;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+}
+
+/* Message Styles */
+#popup-message {
+  font-size: 16px;
+  color: #333;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* Close Button Styles */
+#close-button {
+  display: block;
+  margin: 0 auto;
+  background-color: #f44336;
+  color: white;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
 	         </style></head>
 
 <body data-rsssl=1 itemtype='https://schema.org/WebPage' itemscope='itemscope' class="home page-template-default page page-id-10 ast-desktop ast-page-builder-template ast-no-sidebar astra-4.1.2 ast-single-post ast-inherit-site-logo-transparent ast-hfb-header elementor-default elementor-kit-7 elementor-page elementor-page-10 astra-addon-3.9.4">
@@ -957,6 +1007,26 @@ var WprConfig = {"ajaxurl":"https:\/\/elonmuskceo.net\/wp-admin\/admin-ajax.php"
 			<script>
 			/(trident|msie)/i.test(navigator.userAgent)&&document.getElementById&&window.addEventListener&&window.addEventListener("hashchange",function(){var t,e=location.hash.substring(1);/^[A-z0-9_-]+$/.test(e)&&(t=document.getElementById(e))&&(/^(?:a|select|input|button|textarea)$/i.test(t.tagName)||(t.tabIndex=-1),t.focus())},!1);
 			</script>
+				<!-- Popup Button -->
+<div id="popup-button" onclick="togglePopup()">Disclaimer!!</div>
+
+<!-- Popup Message Container -->
+<div id="popup-container">
+  <div id="popup-message">
+    <p>This is your popup message!</p>
+  </div>
+  <button id="close-button" onclick="togglePopup()">Close</button>
+</div>
+				<script>
+  function togglePopup() {
+    var popupContainer = document.getElementById('popup-container');
+    if (popupContainer.style.display === 'none' || popupContainer.style.display === '') {
+      popupContainer.style.display = 'block';
+    } else {
+      popupContainer.style.display = 'none';
+    }
+  }
+</script>
 				</body>
 
 <!-- Mirrored from elonmuskceo.net/ by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 13 Apr 2023 20:57:15 GMT -->
